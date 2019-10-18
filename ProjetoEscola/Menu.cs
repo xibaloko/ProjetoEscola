@@ -1,5 +1,6 @@
 ﻿using System;
 using ProjetoEscola.Entities;
+using System.Linq;
 
 namespace ProjetoEscola
 {
@@ -11,16 +12,18 @@ namespace ProjetoEscola
         internal static void MenuInicial(Escola escola)
         {
 
-            while(true)
+            while (true)
             {
                 Console.WriteLine("SELECIONE UMA OPÇÃO DE [0] A [7]");
                 Console.WriteLine("[1] - CADASTRAR TURMA");
-                Console.WriteLine("[2] - CADASTRAR PROFESSOR");
-                Console.WriteLine("[3] - CADASTRAR ALUNO");
-                Console.WriteLine("[4] - LISTAR TURMAS");
-                Console.WriteLine("[5] - LISTAR PROFESSORES");
-                Console.WriteLine("[6] - LISTAR ALUNOS");
-                Console.WriteLine("[7] - INSERIR PROFESSORES E ALUNOS NA TURMA");
+                Console.WriteLine("[2] - CADASTRAR COORDENADOR");
+                Console.WriteLine("[3] - CADASTRAR PROFESSOR");
+                Console.WriteLine("[4] - CADASTRAR ALUNO");
+                Console.WriteLine("[5] - LISTAR TURMAS");
+                Console.WriteLine("[6] - LISTAR COORDENADORES");
+                Console.WriteLine("[7] - LISTAR PROFESSORES");
+                Console.WriteLine("[8] - LISTAR ALUNOS");
+                Console.WriteLine("[9] - INSERIR MEMBROS A TURMA");
                 Console.WriteLine("[0] - SAIR\n");
 
                 n = Validacao.ValidarMenuInicial(Console.ReadLine());
@@ -38,18 +41,23 @@ namespace ProjetoEscola
                         Console.ReadLine();
                         break;
                     case 2:
-                        escola.CadastrarProfessor();
+                        escola.CadastrarCoordenador();
                         Console.Write("\nPRESSIONE ENTER PARA VOLTAR AO MENU INICIAL..");
                         Console.ReadLine();
                         break;
                     case 3:
-                        escola.CadastrarAluno();
+                        escola.CadastrarProfessor();
                         Console.Write("\nPRESSIONE ENTER PARA VOLTAR AO MENU INICIAL..");
                         Console.ReadLine();
                         break;
                     case 4:
+                        escola.CadastrarAluno();
+                        Console.Write("\nPRESSIONE ENTER PARA VOLTAR AO MENU INICIAL..");
+                        Console.ReadLine();
+                        break;
+                    case 5:
                         escola.ListarTurmas(escola.Turmas);
-                        if(escola.Turmas.Count > 0)
+                        if (escola.Turmas.Count > 0)
                         {
                             Console.Write("\nDESEJA EXIBIR OS INTEGRANTES DE ALGUMA TURMA? (S/N): ");
                             string s = Validacao.ValidarSimOuNao(Console.ReadLine().ToUpper());
@@ -59,17 +67,22 @@ namespace ProjetoEscola
                         Console.Write("\nPRESSIONE ENTER PARA VOLTAR AO MENU INICIAL..");
                         Console.ReadLine();
                         break;
-                    case 5:
-                        escola.ListarProfessores(escola.Professores);
-                        Console.Write("\nPRESSIONE ENTER PARA VOLTAR AO MENU INICIAL..");
-                        Console.ReadLine();
-                        break;
                     case 6:
-                        escola.ListarAlunos(escola.Alunos);
+                        escola.ListarCoordenadores(escola.Coordenadores);
                         Console.Write("\nPRESSIONE ENTER PARA VOLTAR AO MENU INICIAL..");
                         Console.ReadLine();
                         break;
                     case 7:
+                        escola.ListarProfessores(escola.Professores);
+                        Console.Write("\nPRESSIONE ENTER PARA VOLTAR AO MENU INICIAL..");
+                        Console.ReadLine();
+                        break;
+                    case 8:
+                        escola.ListarAlunos(escola.Alunos);
+                        Console.Write("\nPRESSIONE ENTER PARA VOLTAR AO MENU INICIAL..");
+                        Console.ReadLine();
+                        break;
+                    case 9:
                         MenuAtribuir(escola);
                         Console.Write("\nPRESSIONE ENTER PARA VOLTAR AO MENU INICIAL..");
                         Console.ReadLine();
@@ -88,8 +101,9 @@ namespace ProjetoEscola
         internal static void MenuAtribuir(Escola escola) // MENU DE DECISÃO PARA ATRIBUIÇÃO DE PROFESSORES E ALUNOS A TURMAS
         {
             Console.WriteLine("\nSELECIONE UMA OPÇÃO DE [0] A [2]");
-            Console.WriteLine("[1] - INSERIR UM PROFESSOR A UMA TURMA");
-            Console.WriteLine("[2] - INSERIR UM ALUNO A UMA TURMA");
+            Console.WriteLine("[1] - INSERIR UM COORDENADOR A UMA TURMA");
+            Console.WriteLine("[2] - INSERIR UM PROFESSOR A UMA TURMA");
+            Console.WriteLine("[3] - INSERIR UM ALUNO A UMA TURMA");
             Console.WriteLine("[0] - VOLTAR AO MENU INICIAL\n");
             j = Validacao.ValidarMenuInicial(Console.ReadLine());
 
@@ -97,9 +111,24 @@ namespace ProjetoEscola
             {
                 case 0:
                     break;
-
                 case 1:
                     string s = "S";
+                    while (escola.Turmas.Count == 0 && s != "N") // ENQUANTO NÃO HOUVER TURMA CADASTRADA, PERGUNTA SE QUER CADASTRAR NA HORA
+                        s = Validacao.NaoHaTurmas(escola);
+                    s = "S";
+                    while (escola.Coordenadores.Count == 0 && s != "N") // ENQUANTO NÃO HOUVER COORDENADOR CADASTRADO, PERGUNTA SE QUER CADASTRAR NA HORA
+                        s = Validacao.NaoHaCoordenadores(escola);
+                    if (escola.Turmas.Count == 0 || escola.Coordenadores.Count == 0) // PRECISA TER PELO MENOS UMA TURMA E UM ALUNO
+                        Console.Write("\nÉ NECESSÁRIO TER PELO MENOS UM ALUNO E UMA TURMA CADASTRADA PARA FAZER A ATRIBUIÇÃO");
+
+                    else // SE CHEGAR NESSE ELSE, SIGNIFICA QUE HÁ PELO MENOS UMA TURMA E UM COORDENADOR
+                    {
+                        escola.ListarCoordenadores(escola.Coordenadores);
+                        AtribuirCoordenador(escola);
+                    }
+                    break;
+                case 2:
+                    s = "S";
                     while (escola.Turmas.Count == 0 && s != "N") // ENQUANTO NÃO HOUVER TURMA CADASTRADA, PERGUNTA SE QUER CADASTRAR NA HORA
                         s = Validacao.NaoHaTurmas(escola);
                     s = "S";
@@ -115,7 +144,7 @@ namespace ProjetoEscola
                     }
                     break;
 
-                case 2:
+                case 3:
                     s = "S";
                     while (escola.Turmas.Count == 0 && s != "N") // ENQUANTO NÃO HOUVER TURMA CADASTRADA, PERGUNTA SE QUER CADASTRAR NA HORA
                         s = Validacao.NaoHaTurmas(escola);
@@ -131,69 +160,92 @@ namespace ProjetoEscola
                         AtribuirAlunos(escola);
                     }
                     break;
+                
             }
+        }
+
+        internal static void AtribuirCoordenador(Escola escola) // ATRIBUI UM PROFESSOR A UMA TURMA ESPECIFICA
+        {
+            Console.Write("\nDIGITE O REGISTRO DO COORDENADOR QUE DESEJA INSERIR NA TURMA: ");
+            n = Validacao.ValidarNumeros(Console.ReadLine());
+
+            Coordenador coordenador = escola.Coordenadores.Where(x => x.Registro == n).FirstOrDefault();
+            if (coordenador != null)
+            {
+                escola.ListarTurmas(escola.Turmas);
+                Console.Write("\nDIGITE O NÚMERO DA TURMA QUE DESEJA INSERIR O COORDENADOR(A): ");
+                n = Validacao.ValidarNumeros(Console.ReadLine());
+                Turma turma = escola.Turmas.Where(x => x.NumeroTurma == n).FirstOrDefault();
+                if (turma != null)
+                {
+                    turma.AdicionarCoordenador(coordenador);
+                    Console.Write("\nCOORDENADOR(A) ATRIBUÍDO COM SUCESSO!");
+                }
+                else
+                    Console.WriteLine("\nTURMA NÃO ENCONTRADA!");
+            }
+            else
+                Console.WriteLine("\nCOORDENADOR NÃO ENCONTRADO!");
+
         }
         internal static void AtribuirProfessor(Escola escola) // ATRIBUI UM PROFESSOR A UMA TURMA ESPECIFICA
         {
             Console.Write("\nDIGITE O REGISTRO DO PROFESSOR QUE DESEJA INSERIR NA TURMA: ");
             n = Validacao.ValidarNumeros(Console.ReadLine());
 
-            foreach (Professor professor in escola.Professores)
+            Professor professor = escola.Professores.Where(x => x.Registro == n).FirstOrDefault();
+            if (professor != null)
             {
-                if (professor.Registro == n)
+                escola.ListarTurmas(escola.Turmas);
+                Console.Write("\nDIGITE O NÚMERO DA TURMA QUE DESEJA INSERIR O PROFESSOR(A): ");
+                n = Validacao.ValidarNumeros(Console.ReadLine());
+                Turma turma = escola.Turmas.Where(x => x.NumeroTurma == n).FirstOrDefault();
+                if (turma != null)
                 {
-                    escola.ListarTurmas(escola.Turmas);
-                    Console.Write("\nDIGITE O NÚMERO DA TURMA QUE DESEJA INSERIR O PROFESSOR(A): ");
-                    n = Validacao.ValidarNumeros(Console.ReadLine());
-
-                    foreach (Turma turma in escola.Turmas)
-                        if (turma.NumeroTurma == n)
-                        {
-                            turma.AdicionarProfessor(professor);
-                            Console.Write("\nPROFESSOR ATRIBUÍDO COM SUCESSO!\n");
-                        }
+                    turma.AdicionarProfessor(professor);
+                    Console.Write("\nPROFESSOR(A) ATRIBUÍDO COM SUCESSO!");
                 }
-
+                else
+                    Console.WriteLine("\nTURMA NÃO ENCONTRADA!");
             }
+            else
+                Console.WriteLine("\nPROFESSOR NÃO ENCONTRADO!");
+            
         }
         internal static void AtribuirAlunos(Escola escola) // ATRIBUI UM ALUNO A UMA TURMA ESPECIFICA
         {
             Console.Write("\nDIGITE A MATRÍCULA DO ALUNO QUE DESEJA INSERIR NA TURMA: ");
             n = Validacao.ValidarNumeros(Console.ReadLine());
 
-            foreach (Aluno aluno in escola.Alunos)
+            Aluno aluno = escola.Alunos.Where(x => x.Matricula == n).FirstOrDefault();
+            if (aluno != null)
             {
-                if (aluno.Matricula == n)
+                escola.ListarTurmas(escola.Turmas);
+                Console.Write("\nDIGITE O NÚMERO DA TURMA QUE DESEJA INSERIR O ALUNO(A): ");
+                n = Validacao.ValidarNumeros(Console.ReadLine());
+                Turma turma = escola.Turmas.Where(x => x.NumeroTurma == n).FirstOrDefault();
+                if (turma != null)
                 {
-                    escola.ListarTurmas(escola.Turmas);
-                    Console.Write("\nDIGITE O NÚMERO DA TURMA QUE DESEJA INSERIR O ALUNO(A): ");
-                    n = Validacao.ValidarNumeros(Console.ReadLine());
-                    Console.WriteLine();
-
-                    foreach (Turma turma in escola.Turmas)
-                        if (turma.NumeroTurma == n)
-                        {
-                            turma.AdicionarAluno(aluno);
-                            Console.Write("\nALUNO(A) ATRIBUÍDO COM SUCESSO!\n");
-                        }
+                    turma.AdicionarAluno(aluno);
+                    Console.Write("\nALUNO(A) ATRIBUÍDO COM SUCESSO!");
                 }
+                else
+                    Console.WriteLine("\nTURMA NÃO ENCONTRADA!");
             }
+            else
+                Console.WriteLine("\nALUNO NÃO ENCONTRADO!");
         }
         internal static void ListarDadosTurma(Escola escola) // LISTA OS INTEGRANTES DE UMA TURMA ESPECIFICA
         {
             Console.Write("\nDIGITE O NÚMERO DA TURMA QUE DESEJA LISTAR SEUS INTEGRANTES: ");
             n = Validacao.ValidarNumeros(Console.ReadLine());
 
-            foreach (Turma turma in escola.Turmas)
-            {
-                if (turma.NumeroTurma == n)
-                {
-                    if (turma.Professor != null || turma.Alunos.Count > 0)
-                        turma.ListarRelacionados();
-                    else
-                        Console.WriteLine("\nNÃO HÁ NINGUEM CADASTRADO NESSA TURMA\n");
-                }                                 
-            }
+            var turma = escola.Turmas.Where(x => x.NumeroTurma == n).FirstOrDefault();
+
+            if (turma == null)
+                Console.WriteLine("\nNÃO HÁ NINGUEM CADASTRADO NESSA TURMA\n");
+            else if (turma.Professor != null || turma.Alunos.Count > 0)
+                Console.WriteLine(turma);
         }
     }
 }

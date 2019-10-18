@@ -81,6 +81,18 @@ namespace ProjetoEscola
             else
                 return "N";
         }
+        internal static string NaoHaCoordenadores(Escola escola) // SE JA HOUVER UM ALUNO, CHAMA O CADASTRAR ALUNO
+        {
+            Console.WriteLine("\nNÃO HÁ NENHUM COORDENADOR CADASTRADO, DESEJA CADASTRAR UM? (S/N)");
+            string s = ValidarSimOuNao(Console.ReadLine().ToUpper());
+            if (s == "S")
+            {
+                escola.CadastrarCoordenador();
+                return "S";
+            }
+            else
+                return "N";
+        }
         internal static string NaoHaProfessores(Escola escola) // SE JA HOUVER UM PROFESSOR, CHAMA O CADASTRAR PROFESSOR
         {
             Console.WriteLine("\nNÃO HÁ NENHUM PROFESSOR CADASTRADO, DESEJA CADASTRAR UM? (S/N)");
@@ -105,5 +117,6 @@ namespace ProjetoEscola
             else
                 return "N";
         }
+        
     }
 }
