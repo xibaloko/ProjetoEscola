@@ -1,6 +1,5 @@
 ﻿using System;
 using ProjetoEscola.Entities;
-
 namespace ProjetoEscola
 {
     class Program

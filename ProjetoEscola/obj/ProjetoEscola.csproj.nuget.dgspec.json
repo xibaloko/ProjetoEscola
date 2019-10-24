@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dev4Jobs9\\source\\repos\\CadastroPessoas\\ProjetoEscola 2.1\\ProjetoEscola\\ProjetoEscola.csproj": {}
+    "C:\\Users\\Dev4Jobs9\\source\\repos\\CadastroPessoas\\ProjetoEscola 3.0\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dev4Jobs9\\source\\repos\\CadastroPessoas\\ProjetoEscola 2.1\\ProjetoEscola\\ProjetoEscola.csproj": {
+    "C:\\Users\\Dev4Jobs9\\source\\repos\\CadastroPessoas\\ProjetoEscola 3.0\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dev4Jobs9\\source\\repos\\CadastroPessoas\\ProjetoEscola 2.1\\ProjetoEscola\\ProjetoEscola.csproj",
+        "projectUniqueName": "C:\\Users\\Dev4Jobs9\\source\\repos\\CadastroPessoas\\ProjetoEscola 3.0\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.csproj",
         "projectName": "ProjetoEscola",
-        "projectPath": "C:\\Users\\Dev4Jobs9\\source\\repos\\CadastroPessoas\\ProjetoEscola 2.1\\ProjetoEscola\\ProjetoEscola.csproj",
+        "projectPath": "C:\\Users\\Dev4Jobs9\\source\\repos\\CadastroPessoas\\ProjetoEscola 3.0\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola.csproj",
         "packagesPath": "C:\\Users\\Dev4Jobs9\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dev4Jobs9\\source\\repos\\CadastroPessoas\\ProjetoEscola 2.1\\ProjetoEscola\\obj\\",
+        "outputPath": "C:\\Users\\Dev4Jobs9\\source\\repos\\CadastroPessoas\\ProjetoEscola 3.0\\ProjetoEscola\\ProjetoEscola\\ProjetoEscola\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

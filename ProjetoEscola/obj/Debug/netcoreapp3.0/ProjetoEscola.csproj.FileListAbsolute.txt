@@ -42,3 +42,36 @@ C:\Users\Dev4Jobs9\source\repos\CadastroPessoas\ProjetoEscola 2.1\ProjetoEscola\
 C:\Users\Dev4Jobs9\source\repos\CadastroPessoas\ProjetoEscola 2.1\ProjetoEscola\obj\Debug\netcoreapp3.0\ProjetoEscola.AssemblyInfo.cs
 C:\Users\Dev4Jobs9\source\repos\CadastroPessoas\ProjetoEscola 2.1\ProjetoEscola\obj\Debug\netcoreapp3.0\ProjetoEscola.dll
 C:\Users\Dev4Jobs9\source\repos\CadastroPessoas\ProjetoEscola 2.1\ProjetoEscola\obj\Debug\netcoreapp3.0\ProjetoEscola.pdb
+C:\Users\Dev4Jobs9\source\repos\CadastroPessoas\ProjetoEscola\ProjetoEscola\ProjetoEscola\bin\Debug\netcoreapp3.0\ProjetoEscola.exe
+C:\Users\Dev4Jobs9\source\repos\CadastroPessoas\ProjetoEscola\ProjetoEscola\ProjetoEscola\bin\Debug\netcoreapp3.0\ProjetoEscola.deps.json
+C:\Users\Dev4Jobs9\source\repos\CadastroPessoas\ProjetoEscola\ProjetoEscola\ProjetoEscola\bin\Debug\netcoreapp3.0\ProjetoEscola.runtimeconfig.json
+C:\Users\Dev4Jobs9\source\repos\CadastroPessoas\ProjetoEscola\ProjetoEscola\ProjetoEscola\bin\Debug\netcoreapp3.0\ProjetoEscola.runtimeconfig.dev.json
+C:\Users\Dev4Jobs9\source\repos\CadastroPessoas\ProjetoEscola\ProjetoEscola\ProjetoEscola\bin\Debug\netcoreapp3.0\ProjetoEscola.dll
+C:\Users\Dev4Jobs9\source\repos\CadastroPessoas\ProjetoEscola\ProjetoEscola\ProjetoEscola\bin\Debug\netcoreapp3.0\ProjetoEscola.pdb
+C:\Users\Dev4Jobs9\source\repos\CadastroPessoas\ProjetoEscola\ProjetoEscola\ProjetoEscola\obj\Debug\netcoreapp3.0\ProjetoEscola.csprojAssemblyReference.cache
+C:\Users\Dev4Jobs9\source\repos\CadastroPessoas\ProjetoEscola\ProjetoEscola\ProjetoEscola\obj\Debug\netcoreapp3.0\ProjetoEscola.AssemblyInfoInputs.cache
+C:\Users\Dev4Jobs9\source\repos\CadastroPessoas\ProjetoEscola\ProjetoEscola\ProjetoEscola\obj\Debug\netcoreapp3.0\ProjetoEscola.AssemblyInfo.cs
+C:\Users\Dev4Jobs9\source\repos\CadastroPessoas\ProjetoEscola\ProjetoEscola\ProjetoEscola\obj\Debug\netcoreapp3.0\ProjetoEscola.dll
+C:\Users\Dev4Jobs9\source\repos\CadastroPessoas\ProjetoEscola\ProjetoEscola\ProjetoEscola\obj\Debug\netcoreapp3.0\ProjetoEscola.pdb
+C:\Users\uliss\source\repos\CadastroPessoa\ProjetoEscola 3.0\ProjetoEscola\ProjetoEscola\ProjetoEscola\obj\Debug\netcoreapp3.0\ProjetoEscola.csprojAssemblyReference.cache
+C:\Users\uliss\source\repos\CadastroPessoa\ProjetoEscola 3.0\ProjetoEscola\ProjetoEscola\ProjetoEscola\obj\Debug\netcoreapp3.0\ProjetoEscola.AssemblyInfoInputs.cache
+C:\Users\uliss\source\repos\CadastroPessoa\ProjetoEscola 3.0\ProjetoEscola\ProjetoEscola\ProjetoEscola\obj\Debug\netcoreapp3.0\ProjetoEscola.AssemblyInfo.cs
+C:\Users\uliss\source\repos\CadastroPessoa\ProjetoEscola 3.0\ProjetoEscola\ProjetoEscola\ProjetoEscola\obj\Debug\netcoreapp3.0\ProjetoEscola.dll
+C:\Users\uliss\source\repos\CadastroPessoa\ProjetoEscola 3.0\ProjetoEscola\ProjetoEscola\ProjetoEscola\obj\Debug\netcoreapp3.0\ProjetoEscola.pdb
+C:\Users\uliss\source\repos\CadastroPessoa\ProjetoEscola 3.0\ProjetoEscola\ProjetoEscola\ProjetoEscola\bin\Debug\netcoreapp3.0\ProjetoEscola.exe
+C:\Users\uliss\source\repos\CadastroPessoa\ProjetoEscola 3.0\ProjetoEscola\ProjetoEscola\ProjetoEscola\bin\Debug\netcoreapp3.0\ProjetoEscola.deps.json
+C:\Users\uliss\source\repos\CadastroPessoa\ProjetoEscola 3.0\ProjetoEscola\ProjetoEscola\ProjetoEscola\bin\Debug\netcoreapp3.0\ProjetoEscola.runtimeconfig.json
+C:\Users\uliss\source\repos\CadastroPessoa\ProjetoEscola 3.0\ProjetoEscola\ProjetoEscola\ProjetoEscola\bin\Debug\netcoreapp3.0\ProjetoEscola.runtimeconfig.dev.json
+C:\Users\uliss\source\repos\CadastroPessoa\ProjetoEscola 3.0\ProjetoEscola\ProjetoEscola\ProjetoEscola\bin\Debug\netcoreapp3.0\ProjetoEscola.dll
+C:\Users\uliss\source\repos\CadastroPessoa\ProjetoEscola 3.0\ProjetoEscola\ProjetoEscola\ProjetoEscola\bin\Debug\netcoreapp3.0\ProjetoEscola.pdb
+C:\Users\Dev4Jobs9\source\repos\CadastroPessoas\ProjetoEscola 3.0\ProjetoEscola\ProjetoEscola\ProjetoEscola\bin\Debug\netcoreapp3.0\ProjetoEscola.exe
+C:\Users\Dev4Jobs9\source\repos\CadastroPessoas\ProjetoEscola 3.0\ProjetoEscola\ProjetoEscola\ProjetoEscola\bin\Debug\netcoreapp3.0\ProjetoEscola.deps.json
+C:\Users\Dev4Jobs9\source\repos\CadastroPessoas\ProjetoEscola 3.0\ProjetoEscola\ProjetoEscola\ProjetoEscola\bin\Debug\netcoreapp3.0\ProjetoEscola.runtimeconfig.json
+C:\Users\Dev4Jobs9\source\repos\CadastroPessoas\ProjetoEscola 3.0\ProjetoEscola\ProjetoEscola\ProjetoEscola\bin\Debug\netcoreapp3.0\ProjetoEscola.runtimeconfig.dev.json
+C:\Users\Dev4Jobs9\source\repos\CadastroPessoas\ProjetoEscola 3.0\ProjetoEscola\ProjetoEscola\ProjetoEscola\bin\Debug\netcoreapp3.0\ProjetoEscola.dll
+C:\Users\Dev4Jobs9\source\repos\CadastroPessoas\ProjetoEscola 3.0\ProjetoEscola\ProjetoEscola\ProjetoEscola\bin\Debug\netcoreapp3.0\ProjetoEscola.pdb
+C:\Users\Dev4Jobs9\source\repos\CadastroPessoas\ProjetoEscola 3.0\ProjetoEscola\ProjetoEscola\ProjetoEscola\obj\Debug\netcoreapp3.0\ProjetoEscola.csprojAssemblyReference.cache
+C:\Users\Dev4Jobs9\source\repos\CadastroPessoas\ProjetoEscola 3.0\ProjetoEscola\ProjetoEscola\ProjetoEscola\obj\Debug\netcoreapp3.0\ProjetoEscola.AssemblyInfoInputs.cache
+C:\Users\Dev4Jobs9\source\repos\CadastroPessoas\ProjetoEscola 3.0\ProjetoEscola\ProjetoEscola\ProjetoEscola\obj\Debug\netcoreapp3.0\ProjetoEscola.AssemblyInfo.cs
+C:\Users\Dev4Jobs9\source\repos\CadastroPessoas\ProjetoEscola 3.0\ProjetoEscola\ProjetoEscola\ProjetoEscola\obj\Debug\netcoreapp3.0\ProjetoEscola.dll
+C:\Users\Dev4Jobs9\source\repos\CadastroPessoas\ProjetoEscola 3.0\ProjetoEscola\ProjetoEscola\ProjetoEscola\obj\Debug\netcoreapp3.0\ProjetoEscola.pdb

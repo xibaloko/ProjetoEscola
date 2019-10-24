@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 using ProjetoEscola.Entities;
-
 namespace ProjetoEscola
 {
     public class Validacao
     {
-        public static string ValidarSimOuNao(string s) // MÉTODO USADO PARA VALIDAR INPUTS DE SIM OU NÃO
+        public static string ValidarSimOuNao(string s) // VALIDAR INPUTS DE SIM OU NÃO
         {
             while (s != "S" && s != "N")
             {
@@ -17,7 +16,7 @@ namespace ProjetoEscola
             return s;
         }
 
-        public static int ValidarNumeros(string s) // VALIDAR INPUTS DE NUMEROS INTEIROS MAIORES QUE 0
+        public static int ValidarNumeros(string s) // VALIDAR INPUTS DE NÚMEROS INTEIROS MAIORES QUE 0
         {
             int result;
             while (!int.TryParse(s, out result) || result <= 0)
@@ -28,33 +27,37 @@ namespace ProjetoEscola
             return result;
         }
 
-        public static int ValidarMenuInicial(string s) // VALIDAR INPUTS DE NÚMEROS INTEIROS MAIORES OU IGUAIS A 0
+        public static int ValidadeMaioridade(string s) // VALIDAR IDADE MÍNIMA E MÁXIMA DOS INDIVIDUOS DA ESCOLA
         {
             int result;
-            while (!int.TryParse(s, out result))
+            while (!int.TryParse(s, out result) || result < 18 || result > 100)
             {
-                Console.Write("\nVALOR INVÁLIDO, DIGITE APENAS VALORES INTEIROS POSITIVOS: ");
+                Console.Write("\nVALOR INVÁLIDO, DIGITE IDADE ENTRE 18 E 100 ANOS: ");
                 s = Console.ReadLine();
             }
             return result;
         }
 
-        public static string ValidarLetrasComEspaco(string s) // VALIDAR APENAS LETRAS DE DUAS PALAVRAS OU MAIS
+        public static int ValidarMenu(string s) // VALIDAR INPUTS DE NÚMEROS INTEIROS MAIORES OU IGUAIS A 0
         {
-            while (!Regex.IsMatch(s, @"^[a-z A-Z]+$") || string.IsNullOrEmpty(s) || string.IsNullOrWhiteSpace(s))
+            int result;
+            while (!int.TryParse(s, out result) || result < 0)
             {
-                Console.Write("\nVALOR INVÁLIDO, DIGITE APENAS LETRAS [A-Z]: ");
+                Console.Write("\nVALOR INVÁLIDO, DIGITE APENAS VALORES INTEIROS POSITIVOS OU 0: ");
                 s = Console.ReadLine();
             }
-            return s;
+            return result;
         }
 
-        public static string ValidarLetrasSemEspaco(string s) // VALIDAR APENAS LETRAS DE APENAS UMA PALAVRA
+        public static string ValidarLetras(string s) // VALIDAR APENAS LETRAS DE NOME E SOBRENOME
         {
-            while (!Regex.IsMatch(s, @"^[a-zA-Z]+$") || string.IsNullOrEmpty(s) || string.IsNullOrWhiteSpace(s))
+            string[] vet = s.Split(' ');
+
+            while (!Regex.IsMatch(s, @"^[a-z A-Z]+$") || string.IsNullOrEmpty(s) || string.IsNullOrWhiteSpace(s) || vet.Length < 2)
             {
-                Console.Write("\nVALOR INVÁLIDO, DIGITE APENAS LETRAS [A-Z] E APENAS UMA PALAVRA: ");
+                Console.Write("\nVALOR INVÁLIDO, DIGITE O NOME COMPLETO E APENAS LETRAS [A-Z]: ");
                 s = Console.ReadLine();
+                vet = s.Split(' ');
             }
             return s;
         }
@@ -69,54 +72,49 @@ namespace ProjetoEscola
             return s;
         }
 
-        internal static string NaoHaTurmas(Escola escola) // SE JA HOUVER UMA TURMA, CHAMA O CADASTRAR TURMA
+        internal static void NaoHaTurmas(Escola escola) // VERIFICA SE HÁ TURMAS, CASO NÃO HAJA, PERMITE CADASTRAR UMA OU MAIS
         {
-            Console.WriteLine("\nNÃO HÁ NENHUMA TURMA CADASTRADA, DESEJA CADASTRAR? (S/N)");
-            string s = ValidarSimOuNao(Console.ReadLine().ToUpper());
-            if (s == "S")
+            string s = "S";
+            while (escola.Turmas.Count == 0 && s != "N")
             {
-                escola.CadastrarTurmas();
-                return "S";
+                Console.Write("\nNÃO HÁ NENHUMA TURMA CADASTRADA, DESEJA CADASTRAR? (S/N): ");
+                s = ValidarSimOuNao(Console.ReadLine().ToUpper());
+                if (s == "S")
+                    escola.CadastrarTurmas();
             }
-            else
-                return "N";
         }
-        internal static string NaoHaCoordenadores(Escola escola) // SE JA HOUVER UM ALUNO, CHAMA O CADASTRAR ALUNO
+        internal static void NaoHaCoordenadores(Escola escola) // VERIFICA SE HÁ COORDENADORES, CASO NÃO HAJA, PERMITE CADASTRAR UM
         {
-            Console.WriteLine("\nNÃO HÁ NENHUM COORDENADOR CADASTRADO, DESEJA CADASTRAR UM? (S/N)");
-            string s = ValidarSimOuNao(Console.ReadLine().ToUpper());
-            if (s == "S")
+            string s = "S";
+            while (escola.Coordenadores.Count == 0 && s != "N")
             {
-                escola.CadastrarCoordenador();
-                return "S";
+                Console.Write("\nNÃO HÁ NENHUM COORDENADOR CADASTRADO, DESEJA CADASTRAR UM? (S/N): ");
+                s = ValidarSimOuNao(Console.ReadLine().ToUpper());
+                if (s == "S")
+                    escola.CadastrarCoordenador();
             }
-            else
-                return "N";
         }
-        internal static string NaoHaProfessores(Escola escola) // SE JA HOUVER UM PROFESSOR, CHAMA O CADASTRAR PROFESSOR
+        internal static void NaoHaProfessores(Escola escola) // VERIFICA SE HÁ PROFESSORES, CASO NÃO HAJA, PERMITE CADASTRAR UM
         {
-            Console.WriteLine("\nNÃO HÁ NENHUM PROFESSOR CADASTRADO, DESEJA CADASTRAR UM? (S/N)");
-            string s = ValidarSimOuNao(Console.ReadLine().ToUpper());
-            if (s == "S")
+            string s = "S";
+            while (escola.Professores.Count == 0 && s != "N")
             {
-                escola.CadastrarProfessor();
-                return "S";
+                Console.Write("\nNÃO HÁ NENHUM PROFESSOR CADASTRADO, DESEJA CADASTRAR UM? (S/N): ");
+                s = ValidarSimOuNao(Console.ReadLine().ToUpper());
+                if (s == "S")
+                    escola.CadastrarProfessor(escola);
             }
-            else
-                return "N";
         }
-        internal static string NaoHaAlunos(Escola escola) // SE JA HOUVER UM ALUNO, CHAMA O CADASTRAR ALUNO
+        internal static void NaoHaAlunos(Escola escola) // VERIFICA SE HÁ ALUNOS, CASO NÃO HAJA, PERMITE CADASTRAR UM
         {
-            Console.WriteLine("\nNÃO HÁ NENHUM ALUNO CADASTRADO, DESEJA CADASTRAR UM? (S/N)");
-            string s = ValidarSimOuNao(Console.ReadLine().ToUpper());
-            if (s == "S")
+            string s = "S";
+            while (escola.Alunos.Count == 0 && s != "N")
             {
-                escola.CadastrarAluno();
-                return "S";
+                Console.Write("\nNÃO HÁ NENHUM ALUNO CADASTRADO, DESEJA CADASTRAR UM? (S/N): ");
+                s = ValidarSimOuNao(Console.ReadLine().ToUpper());
+                if (s == "S")
+                    escola.CadastrarAluno();
             }
-            else
-                return "N";
         }
-        
     }
 }
